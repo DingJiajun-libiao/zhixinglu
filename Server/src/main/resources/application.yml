@@ -1,0 +1,22 @@
+# =============================================
+# 通用配置 - 所有环境共享
+# 使用 spring.profiles.active 激活具体环境
+# =============================================
+
+spring:
+  profiles:
+    active: dev  # 默认激活 dev 环境，生产环境部署时修改为 prod
+  application:
+    name: ZhiXingLu
+  servlet:
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 500MB
+  flyway:
+    out-of-order: true
+
+server:
+  address: 0.0.0.0
+  port: 8089
+  servlet:
+    context-path: /api

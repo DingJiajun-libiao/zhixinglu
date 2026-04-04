@@ -1,0 +1,36 @@
+package com.ZhiXingLu.Server.support.utils;
+
+import com.ZhiXingLu.Server.support.ErrorCode;
+import com.ZhiXingLu.Server.support.exception.BusinessException;
+
+/**
+ * @author closer
+ * @Description: 异常工具类
+ * @Create: 2026/4/4 21:49
+ */
+public class ThrowUtils {
+
+    /**
+     * 条件成立则抛异常
+     */
+    public static void throwIf(boolean condition, RuntimeException runtimeException) {
+        if (condition) {
+            throw runtimeException;
+        }
+    }
+
+    /**
+     * 条件成立则抛异常
+     */
+    public static void throwIf(boolean condition, ErrorCode errorCode) {
+        throwIf(condition, new BusinessException(errorCode));
+    }
+
+    /**
+     * 条件成立则抛异常
+     */
+    public static void throwIf(boolean condition, ErrorCode errorCode, String message) {
+        throwIf(condition, new BusinessException(errorCode, message));
+    }
+
+}

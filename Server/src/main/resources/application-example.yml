@@ -1,0 +1,21 @@
+# =============================================
+# 配置示例文件
+# 复制此文件为 application-dev.yml 或 application-prod.yml
+# 并填入实际的配置值
+# =============================================
+
+# 日志配置
+# dev 环境仅控制台输出，不生成文件；prod 环境会在此路径下生成日志文件
+logging:
+  file:
+    path: ./logs
+  level:
+    root: INFO
+    com.libiao.creative_workshop: DEBUG  # 生产环境建议 DEBUG，方便线上排查问题
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://<数据库主机>:<端口>/<数据库名>
+    username: <数据库用户名>
+    password: <数据库密码>
