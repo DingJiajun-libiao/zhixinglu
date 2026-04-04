@@ -19,7 +19,7 @@
 | 类别 | 技术 | 说明 |
 | --- | --- | --- |
 | 语言 | Java 21 | LTS 版本 |
-| 框架 | Spring Boot 3.5.12 | 企业级微服务框架 |
+| 框架 | Spring Boot 3.5.13 | 企业级微服务框架 |
 | 数据库 | MySQL 8.0 | 关系型数据库，存储文档元数据、用户信息等 |
 | ORM | MyBatis-Flex | 轻量级 ORM，支持 Lambda 查询 |
 | 数据库迁移 | Flyway | 版本化 SQL 脚本管理 |
