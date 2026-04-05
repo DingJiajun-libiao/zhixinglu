@@ -24,4 +24,16 @@ public interface UserMapper extends BaseMapper<User> {
                 .where(User::getAccount).eq(account);
         return this.selectCountByQuery(queryWrapper) > 0;
     }
+
+    /**
+     * 根据账号查询用户
+     *
+     * @param account 账号
+     * @return 用户，不存在返回 null
+     */
+    default User selectByAccount(String account) {
+        QueryWrapper query = QueryWrapper.create()
+                .where(User::getAccount).eq(account);
+        return this.selectOneByQuery(query);
+    }
 }

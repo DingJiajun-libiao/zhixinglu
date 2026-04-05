@@ -20,3 +20,12 @@ server:
   port: 8089
   servlet:
     context-path: /api
+
+# JWT 配置
+app:
+  auth:
+    jwt:
+      issuer: ZhiXingLu
+      secret: ZhiXingLu-dev-secret-key-2026-change-in-prod
+      access-token-ttl: 3600000       # 1 小时
+      refresh-token-ttl: 604800000    # 7 天
