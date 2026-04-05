@@ -2,6 +2,7 @@ package com.ZhiXingLu.Server.repository;
 
 import com.ZhiXingLu.Server.biz.user.model.entity.User;
 import com.mybatisflex.core.BaseMapper;
+import com.mybatisflex.core.query.QueryWrapper;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
@@ -11,4 +12,16 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface UserMapper extends BaseMapper<User> {
+
+    /**
+     * 判断账号是否已存在
+     *
+     * @param account 账号
+     * @return 存在返回 true
+     */
+    default boolean existByAccount(String account) {
+        QueryWrapper queryWrapper = QueryWrapper.create()
+                .where(User::getAccount).eq(account);
+        return this.selectCountByQuery(queryWrapper) > 0;
+    }
 }
