@@ -17,4 +17,12 @@ public interface UserRoleService extends IService<UserRole> {
      * @param roleId 角色 ID
      */
     void bindRole(Long userId, Long roleId);
+
+    /**
+     * 根据用户 ID 查询角色 ID
+     *
+     * @param userId 用户 ID
+     * @return 角色 ID
+     */
+    Long getRoleIdByUserId(Long userId);
 }
